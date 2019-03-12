@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets\css\style.css">
     <style type="text/css">
         button,
         div,
@@ -13,7 +14,7 @@
 </head>
 
 <body>
-        <div class = "conatiner"> 
+        <div class = "container"> 
             <h1> Welcome to the Gif Search</h1>
         </div>
 
@@ -36,11 +37,11 @@
 
 
 var tag = [
-    "monkey",
-    "dolphin", 
-    "cow", 
-    "pig", 
-    "cat"
+    "Darth-Vader",
+    "Luke-Skywalker", 
+    "Chewbacca", 
+    "Han-Solo", 
+    "Princess-Leia"
 ];
 
 
@@ -103,14 +104,38 @@ console.log(results);
     
     var gifImage = $("<img>");
     gifImage.attr("src", results[j].images.fixed_height.url);
+    gifImage.attr("data-animate", results[j].images.fixed_height.url);
+    gifImage.attr("data-still", results[j].images.fixed_height_still.url)
+    gifImage.attr("data-state", "still")
+    gifImage.addClass("gif")
     gifDiv.append(title);
     gifDiv.append(rating);
     gifDiv.append(gifImage);
 
     $("#images").prepend(gifDiv);
 
-
   }
+  $(document.body).on("click",".gif", function() {
+
+    var state = $(this).attr("data-state");
+
+    if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+      } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+      }
+    });
+    // for (j = 0; j < results.length; j++) {
+    //     if (state === "animate") {
+
+    //     }
+
+
+
+
+
   // console.log(results);
  });
 });
