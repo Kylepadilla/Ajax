@@ -1,6 +1,4 @@
 .container {
-    background: url(../images/stardust.gif);
-
 }
 
 h1{
@@ -8,7 +6,7 @@ h1{
     font-size: 42px;
     color: rgb(202, 202, 99);
     padding: 30px;
-
+    background: url(../images/stardust.gif);
 
 }
 
@@ -38,4 +36,10 @@ body{
     display:block;
     margin:0.2em auto;
     }
+}
+
+
+
+.gifContainer{
+    
 }
