@@ -47,10 +47,12 @@ body{
     background-color: rgba(111, 74, 126, 0.473);
     text-decoration:none;
     font-family:'Roboto',sans-serif;
+    border: none;
 }
 #populate .btn-btn-secondary {
     font-family: 'Roboto',sans-serif;
-    margin-top: 4px;
+    margin: 4px 0px 0px 4px;
+
 }
 #gifContainer{
     margin: 25px 0px 25px 0px;
