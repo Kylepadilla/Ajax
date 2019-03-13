@@ -4,6 +4,7 @@
 h1{
     text-align: center;
     font-size: 42px;
+    font-family: 'Roboto',sans-serif;
     color: rgb(202, 202, 99);
     padding: 30px;
     background: url(../images/stardust.gif);
@@ -24,7 +25,7 @@ body{
     font-family:'Roboto',sans-serif;
     font-weight:300;
     color:#FFFFFF;
-    background-color:#4eb5f1;
+    background-color:#222425;
     text-align:center;
     transition: all 0.2s;
     }
@@ -38,8 +39,19 @@ body{
     }
 }
 
+#gif-form{
+    font-family: 'Roboto',sans-serif;
+}
 
-
+#gif-input{
+    background-color: rgba(111, 74, 126, 0.473);
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+}
+#populate .btn-btn-secondary {
+    font-family: 'Roboto',sans-serif;
+    margin-top: 4px;
+}
 #gifContainer{
     margin: 25px 0px 25px 0px;
 

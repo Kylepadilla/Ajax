@@ -12,10 +12,11 @@
       <div class = "container" id = "button-display"> </div>
         <form id="gif-form">
                 <label for="gif-input"></label>
-                <input type="text" id="gif-input" placeholder="giphy please!"><br>
+                <input type="text" id="gif-input" placeholder="Yub nub."><br>
 
-                <input id="add-gif" type="submit" value="Gif Search">
+                <input id="add-gif" class = "btn btn-secondary" type="submit" value="Gif Search">
             </form>
+        <button class = "btn btn-secondary" id = "populate" >add more gifs!</button>
 
         <div class = "card-body" id = "images"></div>
 
@@ -72,7 +73,8 @@ renderButtons();
 
 $(document.body).on("click",".button", function() {
 
-  var search = $(this).attr("data-name");
+
+var search = $(this).attr("data-name");
 
 var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=WSu7YdGhxEmY7RFL1E6gjcfEVmatOfgF&limit=10";
 
@@ -126,6 +128,11 @@ console.log(results);
     $(document.body).on("click","#gifLink", function() {
       window.location.href = $(this).attr("window.location.href")
     })
+
+    $(document.body).on("click","#populate", function(populate) {
+      console.log("click")
+      
+    });
  });
 });
 </script>
