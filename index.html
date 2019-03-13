@@ -4,31 +4,20 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets\css\style.css">
-    <!-- <style type="text/css">
-        button,
-        div,
-        form,
-        input {
-          margin: 10px;
-        }
-      </style> -->
 </head>
 
 <body>
 
-      <h1>Galactic Giphy-Me</h1>
+      <h1>Galactic Giphy Serach</h1>
       <div class = "container" id = "button-display"> </div>
-        <!-- <div id = "images"> -->
-
-            <!-- </div> -->
         <form id="gif-form">
-                <label for="gif-input" aria-placeholder="giphy me please!"></label>
-                <input type="text" id="gif-input"><br>
+                <label for="gif-input"></label>
+                <input type="text" id="gif-input" placeholder="giphy please!"><br>
 
                 <input id="add-gif" type="submit" value="Gif Search">
             </form>
 
-        <div id = "images"></div>
+        <div class = "card-body" id = "images"></div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -103,25 +92,25 @@ console.log(results);
 
   for (var j = 0; j < results.length; j++) {
 
-    var gifDiv = $("<div>").attr("id", "gifContainer");
+    var gifDiv = $("<div>").attr("class", "card-body").attr("style", "width: 18rem;");
     
-    var title = $("<p>").html("title: " + results[j].title);
-    var rating = $("<p>").html("rating: " + results[j].rating);
+    var title = $("<h5>").html(results[j].title).addClass("card-img-top");
+    var rating = $("<p>").html("rating: " + results[j].rating).addClass("card-text");
     var link = $("<button>").attr("id", "gifLink").text("giphy link!").attr("window.location.href", results[j].url);
     var gifImage = $("<img>");
     gifImage.attr("src", results[j].images.fixed_height.url);
     gifImage.attr("data-animate", results[j].images.fixed_height.url);
     gifImage.attr("data-still", results[j].images.fixed_height_still.url)
     gifImage.attr("data-state", "still")
-    gifImage.addClass("gif")
+    gifImage.addClass("card-img-top")
     gifDiv.append(title);
-    gifDiv.append(rating);
     gifDiv.append(gifImage);
+    gifDiv.append(rating);
     gifDiv.append(link);
     $("#images").prepend(gifDiv);
 
   }
-  $(document.body).on("click",".gif", function() {
+  $(document.body).on("click",".card-img-top", function() {
 
     var state = $(this).attr("data-state");
 
